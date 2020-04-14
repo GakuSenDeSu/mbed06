@@ -78,16 +78,10 @@ int main()
       );
       // basic printf demo = 16 by 18 characters on screen
       uLCD.printf("\n  Starting Demo...");
-      uLCD.text_width(4); //4X size text
-      uLCD.text_height(4);
       uLCD.color(RED);
       uLCD.locate(1,2);
-      uLCD.printf("FXOS8700Q ACC: ")
-      uLCD.printf("X=%1.4f(%x%x) Y=%1.4f(%x%x) Z=%1.4f(%x%x)\r\n",\
-            t[0], res[0], res[1],\
-            t[1], res[2], res[3],\
-            t[2], res[4], res[5]\
-      );
-      wait(1.5);
+      uLCD.printf("\n FXOS8700Q ACC: ")
+
+      wait(1.0);
     }
 }
