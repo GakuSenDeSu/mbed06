@@ -77,10 +77,9 @@ int main()
             t[2], res[4], res[5]\
       );
       // basic printf demo = 16 by 18 characters on screen
-      uLCD.background_color(0x000000);// black
       uLCD.locate(1,1);
-      uLCD.printf("\nFXOS8700Q ACC:\r\n");
-      uLCD.color(RED);
+      uLCD.printf("\nFXOS8700Q ACC:\r\n\n");
+      uLCD.color(BLUE);
       uLCD.printf("X=%1.4f(%x%x)\r\n",t[0], res[0], res[1]);
       uLCD.printf("Y=%1.4f(%x%x)\r\n",t[1], res[2], res[3]);
       uLCD.printf("Z=%1.4f(%x%x)\r\n",t[2], res[4], res[5]);
