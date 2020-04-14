@@ -77,11 +77,23 @@ int main()
             t[2], res[4], res[5]\
       );
       // basic printf demo = 16 by 18 characters on screen
-      uLCD.printf("\n  Starting Demo...");
+      uLCD.background_color(0x000000);// black
+      uLCD.locate(1,1);
+      uLCD.printf("\nFXOS8700Q ACC:\r\n");
       uLCD.color(RED);
-      uLCD.locate(1,2);
-      uLCD.printf("\n FXOS8700Q ACC: ")
-
+      uLCD.printf("X=%1.4f(%x%x)\r\n",t[0], res[0], res[1]);
+      uLCD.printf("Y=%1.4f(%x%x)\r\n",t[1], res[2], res[3]);
+      uLCD.printf("Z=%1.4f(%x%x)\r\n",t[2], res[4], res[5]);
       wait(1.0);
     }
+}
+
+void FXOS8700CQ_readRegs(int addr, uint8_t * data, int len) {
+   char t = addr;
+   i2c.write(m_addr, &t, 1, true);
+   i2c.read(m_addr, (char *)data, len);
+}
+
+void FXOS8700CQ_writeRegs(uint8_t * data, int len) {
+   i2c.write(m_addr, (char *)data, len);
 }
